@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatura 3B</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo do Cabeçalho */
+        header {
+            
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 50px;
+            text-align:left;
+            font-size: 30px;
+        }
+        .introducao {
+            display: block;
+            color: white;
+            text-align: center;
+           
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0033cc;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+           
+            text-decoration: none;
+            font-size: 20px;
+             
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        /* Sessão de carrossel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            
+            background-color: #0033cc;
+        }
+
+        .carousel img {
+            width: 50%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 50%;
+            user-select: none;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .carousel .prev:hover, .carousel .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Seção de depoimentos */
+        .depoimentos {
+            background-color: #f1c40f;
+            padding: 50px;
+            text-align: center;
+            margin-top: 120px;
+        }
+
+        .depoimentos blockquote {
+            font-size: 1.2em;
+            margin: 0;
+            padding: 10px;
+            color: #333;
+            border-left: 5px solid #333;
+        }
+
+        .depoimentos cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 1em;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+    <h1>Formatura 3B</h1>
+    
+    <ul id="introducao">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Cápsula do Tempo</a></li>
+        <li><a href="#">Projetos</a></li>
+        <li><a href="#">Fotos</a></li>
+    </ul>
+    
+
+</header>
+
+<!-- Navegação -->
+
+
+<!-- Carrossel de Imagens -->
+<div class="carousel">
+    <img src="https://via.placeholder.com/1200x400?text=Imagem+1" class="active">
+    <img src="https://via.placeholder.com/1200x400?text=Imagem+2">
+    <img src="https://via.placeholder.com/1200x400?text=Imagem+3">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Depoimentos -->
+<section class="depoimentos">
+    <h2>Depoimentos</h2>
+    <blockquote>
+        "Como professor, acompanhar o crescimento de cada um de vocês ao longo desses anos tem sido uma experiência gratificante. Lembro-me do primeiro dia de aula, quando muitos ainda estavam tímidos e inseguros."
+    </blockquote>
+    <cite>Breno</cite>
+</section>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('active');
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].classList.add('active');
+        setTimeout(showSlides, 3000); // Muda a cada 3 segundos
+    }
+
+    function plusSlides(n) {
+        slideIndex += n - 1;
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        } else if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        showSlides();
+    }
+
+    showSlides();
+</script>
+
+</body>
+</html>
