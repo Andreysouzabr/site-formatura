@@ -45,14 +45,6 @@
             background-color: #111;
         }
 
-        /* Container para Carrossel e Texto */
-        .content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
         /* Carrossel de Imagens */
         .carousel {
             position: relative;
@@ -65,7 +57,7 @@
         .carousel img {
             width: 100%;
             display: none;
-            height: auto; /* Mantém a proporção da imagem */
+            height: 400px;
         }
 
         .carousel img.active {
@@ -97,18 +89,12 @@
         .carousel .prev:hover, .carousel .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
-
-        /* Texto ao lado do Carrossel */
-        .carousel-text {
-            width: 45%; /* Define o tamanho como 45% */
-            text-align: justify; /* Justifica o texto */
-            color: white;
-            padding-left: 20px;
-        }
-
-        .borda-amarela {
+        .borda-amarela{
+            
             background-color: #f1c40f;
             margin-top: 120px;
+
+
         }
 
         /* Seção de depoimentos */
@@ -116,7 +102,9 @@
             background-color: #f1c40f;
             padding: 50px;
             text-align: center; /* Centraliza o conteúdo */
+            
             background-image: url(https://img.elo7.com.br/product/zoom/45A89F2/fundo-fotografico-tecido-capelo-formatura-glitter-150x170-fundo-fotografico.jpg);
+            
         }
 
         .depoimentos blockquote {
@@ -129,6 +117,7 @@
             height: 10px; /* Tamanho ajustado */
             margin-left: auto;
             margin-right: auto;
+           
         }
 
         .depoimentos cite {
@@ -141,32 +130,23 @@
 
         @media only screen and (max-width: 768px) {
             /* Responsividade para celular */
-            .content {
-                flex-direction: column; /* Coloca o texto abaixo do carrossel */
-            }
-
             .carousel {
-                max-width: 100%; /* Define o tamanho como 100% da tela em dispositivos menores */
-            }
-
-            .carousel-text {
-                width: 100%; /* Define o tamanho como 100% */
-                padding-left: 0;
+                max-width: 50%; /* Define o tamanho como metade da tela */
             }
 
             .depoimentos blockquote {
                 font-size: 1em;
             }
         }
-
-        .titulodep {
+        .titulodep{
             color: white;
         }
-
-        .textodepoimento {
+        .textodepoimento{
             background-color: black;
             border: #111;
+        
             border-radius: 29px;
+           
         }
     </style>
 </head>
@@ -185,37 +165,36 @@
     </nav>
 </header>
 
-<!-- Carrossel e Texto -->
-<div class="content">
-    <!-- Carrossel de Imagens -->
-    <div class="carousel">
-        <img src="img/img2.jpeg" class="active">
-        <img src="img/img1.png">
-        <img src="img/img3.jpg">
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <!-- Texto ao lado do Carrossel -->
-    <div class="carousel-text">
-        <p>
-            A formatura da turma 3B é um momento de celebração, em que todos os esforços dos estudantes ao longo dos anos de estudo são reconhecidos. Esta jornada é composta de muitos desafios e conquistas, e cada aluno tem sua própria história de superação. O evento visa não apenas celebrar o término de uma etapa, mas também projetar os futuros profissionais que se formarão no próximo ciclo da vida.
-        </p>
-    </div>
+<!-- Carrossel de Imagens -->
+<div class="carousel">
+    <img src="https://www.aen.pr.gov.br/sites/default/arquivos_restritos/files/styles/share/public/imagem/2024-02/governador_colegio_anibal_foto_rdziura-6600_0.jpg?itok=J5pTKuBX"  class="active">
+    <img src="https://via.placeholder.com/1200x400?text=Imagem+2">
+    <img src="https://via.placeholder.com/1200x400?text=Imagem+3">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-
 <section class="borda-amarela">
-    <br><br>
+    <br>
+    <br>
+
+
 </section>
+
 
 <!-- Depoimentos -->
 <section class="depoimentos">
     <h2 class="titulodep">Depoimentos</h2>
     <blockquote class="textodepoimento">
         "Como professor, acompanhar o crescimento de cada um de vocês ao longo desses anos tem sido uma experiência gratificante. Lembro-me do primeiro dia de aula, quando muitos ainda estavam tímidos e inseguros."
+
+
+        
         <h2>Breno</h2>
     </blockquote>
+        
+  
 </section>
+
 
 <script>
     let slideIndex = 0;
