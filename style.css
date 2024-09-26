@@ -1,0 +1,99 @@
+.quem-somos {
+    background-color: #ffffff; /* Cor de fundo branco */
+    padding: 50px 0;
+  }
+  
+  .quem-somos h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #3015cc;
+    margin-bottom: 30px;
+   
+  }
+  
+  .quem-somos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .quem-somos-content .texto {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000cc;
+    background-color: #ada7a7;
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .quem-somos-content .imagens {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .quem-somos-content .imagens img {
+    max-width: 40%;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  .prev-depo, .next-depo {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+.next-depo {
+    right: 10px;
+}
+
+.prev-depo {
+    left: 10px;
+}
+
+.prev-depo:hover, .next-depo:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*arrecadação seção/*
+/* Seção de Arrecadações */
+.arrecadacoes {
+  background-color: white; /* Fundo branco */
+  padding: 50px 0; /* Espaçamento interno da seção */
+  text-align: center; /* Centraliza o texto */
+}
+
+.arrecadacoes h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.arrecadacoes-container {
+  display: flex;
+  justify-content: center; /* Centraliza as imagens lado a lado */
+  align-items: center; /* Centraliza as imagens verticalmente */
+  gap: 440px; /* Espaço entre as imagens */
+}
+
+.arrecadacoes-container img {
+  max-width: 15%; /* Limita o tamanho das imagens */
+  border-radius: 8px; /* Bordas arredondadas para as imagens */
+}
+

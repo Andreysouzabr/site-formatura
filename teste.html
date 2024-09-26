@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    lin
     <title>Formatura 3B</title>
     <style>
         body {
@@ -10,7 +11,6 @@
             font-family: Arial, sans-serif;
             background-color: rgb(108, 161, 223);
         }
-        /*osp*/
 
         /* Estilo do Cabeçalho */
         header {
@@ -46,6 +46,14 @@
             background-color: #111;
         }
 
+        /* Container para Carrossel e Texto */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
         /* Carrossel de Imagens */
         .carousel {
             position: relative;
@@ -58,7 +66,7 @@
         .carousel img {
             width: 100%;
             display: none;
-            height: 400px;
+            height: auto; /* Mantém a proporção da imagem */
         }
 
         .carousel img.active {
@@ -70,7 +78,7 @@
             position: absolute;
             top: 50%;
             width: auto;
-            padding: 16px;
+            padding: 26px;
             margin-top: -22px;
             color: white;
             font-weight: bold;
@@ -90,12 +98,19 @@
         .carousel .prev:hover, .carousel .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
-        .borda-amarela{
-            
+
+        /* Texto ao lado do Carrossel */
+        .carousel-text {
+            width: 55%; /* Define o tamanho como 45% */
+            text-align: justify; /* Justifica o texto */
+            color: white;
+            padding-left: 20px;
+            font-size: 20px;
+        }
+
+        .borda-amarela {
             background-color: #f1c40f;
             margin-top: 120px;
-
-
         }
 
         /* Seção de depoimentos */
@@ -103,22 +118,25 @@
             background-color: #f1c40f;
             padding: 50px;
             text-align: center; /* Centraliza o conteúdo */
-            
-            background-image: url(https://img.elo7.com.br/product/zoom/45A89F2/fundo-fotografico-tecido-capelo-formatura-glitter-150x170-fundo-fotografico.jpg);
-            
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHQ8vhmqiQFPxZOY8_pwPGfUZBWD2KsSPejg&s);
         }
 
         .depoimentos blockquote {
-            font-size: 0.8em;
+            font-size: 1em;
             margin: 0;
             padding: 150px;
             color: #ffffff;
-            border-left: 5px solid #333;
-            width: 200px; /* Tamanho ajustado */
-            height: 10px; /* Tamanho ajustado */
-            margin-left: auto;
-            margin-right: auto;
-           
+            background-color: black;
+            border-radius: 29px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            width: 50%; /* Tamanho ajustado */
+            margin: 0 auto; /* Centraliza o bloco */
+            padding: 40px; /* Ajusta o espaçamento interno */
+            position: relative;
         }
 
         .depoimentos cite {
@@ -128,26 +146,83 @@
             color: #ffffff;
             font-weight: bold;
         }
-
         @media only screen and (max-width: 768px) {
             /* Responsividade para celular */
+            .content {
+                flex-direction: column; /* Coloca o texto abaixo do carrossel */
+            }
+
             .carousel {
-                max-width: 50%; /* Define o tamanho como metade da tela */
+                max-width: 100%; /* Define o tamanho como 100% da tela em dispositivos menores */
+            }
+
+            .carousel-text {
+                width: 100%; /* Define o tamanho como 100% */
+                padding-left: 0;
             }
 
             .depoimentos blockquote {
                 font-size: 1em;
             }
         }
-        .titulodep{
+
+
+        .titulodep {
             color: white;
         }
-        .textodepoimento{
+
+        .textodepoimento {
             background-color: black;
             border: #111;
-        
             border-radius: 29px;
-           
+        }
+
+        /* Setas de navegação dos depoimentos */
+        .prev-depo, .next-depo {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            user-select: none;
+        }
+
+        .next-depo {
+            right: 10px;
+        }
+
+        .prev-depo {
+            left: 10px;
+        }
+
+        .prev-depo:hover, .next-depo:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* Responsividade para celular */
+            .content {
+                flex-direction: column; /* Coloca o texto abaixo do carrossel */
+            }
+
+            .carousel {
+                max-width: 100%; /* Define o tamanho como 100% da tela em dispositivos menores */
+            }
+
+            .carousel-text {
+                width: 100%; /* Define o tamanho como 100% */
+                padding-left: 0;
+            }
+
+            .depoimentos blockquote {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -166,36 +241,65 @@
     </nav>
 </header>
 
-<!-- Carrossel de Imagens -->
-<div class="carousel">
-    <img src="https://www.aen.pr.gov.br/sites/default/arquivos_restritos/files/styles/share/public/imagem/2024-02/governador_colegio_anibal_foto_rdziura-6600_0.jpg?itok=J5pTKuBX"  class="active">
-    <img src="https://via.placeholder.com/1200x400?text=Imagem+2">
-    <img src="https://via.placeholder.com/1200x400?text=Imagem+3">
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<!-- Carrossel e Texto -->
+<div class="content">
+    <!-- Carrossel de Imagens -->
+    <div class="carousel">
+        <img src="img/img2.jpeg" class="active">
+        <img src="img/img1.png">
+        <img src="img/img3.jpg">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Texto ao lado do Carrossel -->
+    <div class="carousel-text">
+        <p>
+            A formatura da turma 3B é um momento de celebração, em que todos os esforços dos estudantes ao longo dos anos de estudo são reconhecidos. Esta jornada é composta de muitos desafios e conquistas, e cada aluno tem sua própria história de superação. O evento visa não apenas celebrar o término de uma etapa, mas também projetar os futuros profissionais que se formarão no próximo ciclo da vida.
+        </p>
+    </div>
 </div>
+
 <section class="borda-amarela">
-    <br>
-    <br>
-
-
+    <br><br>
 </section>
+
+<section class="quem-somos" style="background-color: white;">
+    <div class="container">
+      <h2>Quem Somos</h2>
+      <div class="quem-somos-content">
+        <div class="texto">
+          <p>
+            Somos uma turma unida por sonhos, desafios e conquistas! Ao longo dos anos, aprendemos juntos, crescemos e enfrentamos cada obstáculo lado a lado. Agora, estamos prontos para celebrar nossa jornada e começar um novo capítulo. Mais do que colegas, nos tornamos uma família, e esse site é a prova de tudo o que vivemos e conquistamos.
+          </p>
+          <p>
+            Aqui, compartilhamos nossa história, nossas memórias e a alegria de ter chegado até aqui. Juntos, mostramos que, com união e perseverança, podemos alcançar qualquer coisa!
+          </p>
+        </div>
+        <div class="imagens">
+          <img src="img1.jpg" alt="Imagem 1">
+          <img src="img2.jpg" alt="Imagem 2">
+          <img src="img3.jpg" alt="Imagem 3">
+        </div>
+      </div>
+    </div>
+</section>
+
+  
 
 
 <!-- Depoimentos -->
 <section class="depoimentos">
     <h2 class="titulodep">Depoimentos</h2>
     <blockquote class="textodepoimento">
-        "Como professor, acompanhar o crescimento de cada um de vocês ao longo desses anos tem sido uma experiência gratificante. Lembro-me do primeiro dia de aula, quando muitos ainda estavam tímidos e inseguros."
-
-
+        <p id="depoimento-texto">"Como professor, acompanhar o crescimento de cada um de vocês ao longo desses anos tem sido uma experiência gratificante. Lembro-me do primeiro dia de aula, quando muitos ainda estavam tímidos e inseguros."</p>
+        <cite id="depoimento-autor">Breno</cite>
         
-        <h2>Breno</h2>
+        <!-- Setas de navegação dos depoimentos -->
+        <a class="prev-depo" onclick="mudarDepoimento(-1)">&#10094;</a>
+        <a class="next-depo" onclick="mudarDepoimento(1)">&#10095;</a>
     </blockquote>
-        
-  
 </section>
-
 
 <script>
     let slideIndex = 0;
@@ -224,7 +328,34 @@
     }
 
     showSlides();
+
+    // Depoimentos
+    let depoimentoIndex = 0;
+    const depoimentos = [
+        { texto: '"Como professor, acompanhar o crescimento de cada um de vocês ao longo desses anos tem sido uma experiência gratificante. Lembro-me do primeiro dia de aula, quando muitos ainda estavam tímidos e inseguros."', autor: "Breno" },
+        { texto: '"A experiência de formatura foi incrível. Foi emocionante ver todos nós juntos, prontos para o próximo passo em nossas vidas."', autor: "Bruna" },
+        { texto: '"A amizade que construímos durante esses anos é algo que nunca vou esquecer. Obrigado a todos por fazerem parte dessa jornada."', autor: "Aldenice" },
+        { texto: '"lorem"', autor: "Problema" }
+    ];
+
+    function mostrarDepoimento() {
+        document.getElementById('depoimento-texto').textContent = depoimentos[depoimentoIndex].texto;
+        document.getElementById('depoimento-autor').textContent = depoimentos[depoimentoIndex].autor;
+    }
+
+    function mudarDepoimento(n) {
+        depoimentoIndex += n;
+        if (depoimentoIndex < 0) {
+            depoimentoIndex = depoimentos.length - 1;
+        } else if (depoimentoIndex >= depoimentos.length) {
+            depoimentoIndex = 0;
+        }
+        mostrarDepoimento();
+    }
+
+    mostrarDepoimento();
 </script>
+
 
 </body>
 </html>
