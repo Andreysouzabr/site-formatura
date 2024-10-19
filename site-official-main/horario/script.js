@@ -35,4 +35,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Exibir os comentários na página
         comments.forEach(function(comment) {
-            const commentEl
+            const commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+            commentElement.innerHTML = `<p>${comment.text}</p><small>${comment.date}</small>`;
+            commentsContainer.appendChild(commentElement);
+        });
+    }
+
+    // Função para adicionar um comentário ao localStorage
+    function addComment(comment) {
+        // Obter os comentários salvos no localStorage
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+        // Adicionar o novo comentário ao array de comentários
+        comments.push(comment);
+
+        // Salvar o array atualizado de comentários no localStorage
+        localStorage.setItem('comments', JSON.stringify(comments));
+    }
+});
