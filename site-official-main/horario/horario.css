@@ -1,0 +1,28 @@
+
+        /* Estilo geral para os botões */
+        button {
+            background-color: aliceblue;
+            border: 3px solid black;
+            margin-top: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Estilo para os títulos */
+        h1 {
+            color: maroon;
+            font-size: 22px;
+        }
+
+        /* Estilo específico para o botão de download com margem superior ajustada */
+        button#abaixa {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        /* Estilo para o botão "Sair" */
+        .botao-sair {
+            text-align: center;
+            width: 20px;
+            
+        }

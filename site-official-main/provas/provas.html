@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,56 +8,92 @@
     <link rel="shortcut icon" href="livroicon.png" type="image/x-icon">
     <title>Provas e resoluções</title>
     <style>
-        a{
+        /* Estilo para os links */
+        a {
             color: maroon;
-            
+            text-decoration: none;
         }
-        button{
+
+        /* Estilo geral para os botões */
+        button {
             background-color: aliceblue;
             border: 3px solid black;
             margin-top: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
 
-        }
-        h1{
+        /* Estilo para os títulos */
+        h1 {
             color: maroon;
+            font-size: 22px;
         }
+
+        /* Estilo específico para o botão de download com margem superior ajustada */
         button#abaixa {
             margin-top: 30px;
             font-size: 20px;
-            
-        }
-        .botao-sair{
-        color: rgb(182, 45, 45);
-        text-decoration: none;
-        font-size: 30px;
-        align-items: center;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        /* Estilo para o botão "Sair" */
+        .botao-sair {
+            text-align: center;
+            width: 20px;
+            
+        }
+        /* Estilo para centralizar a imagem da casa */
+        .imagem-casa {
+            display: block;
+            margin: 0 auto;
+            width: 20px;
+            height: 20px;
+        }
 
     </style>
 </head>
 <body>
-   
-    <a class="botao-sair" href="https://andreysouzabr.github.io">Sair</a>
+    <!-- Botão para sair, redirecionando para outro site -->
+    <a class="imagem-casa" href="https://andreysouzabr.github.io"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACUCAMAAAAj+tKkAAAAZlBMVEUAAAD////e3t67u7sICAh1dXVZWVnNzc319fX5+fna2tqDg4Pj4+Pn5+fQ0NCxsbETExOqqqoaGho+Pj7Dw8NeXl5PT09FRUVnZ2eampqhoaGKioo5OTmRkZEfHx/v7+8yMjIqKiq4XtL2AAAFKklEQVR4nO2c2ZqiMBCFMyIKiLij7e77v+SoaFWEHJIAwZ5vci7bSP6EqtQCrfjzyyW+DaCTB2wrD9hWHrCtPGBbdQgYJ/t8LsQ83ydxzaggHFUVrtFXugMchHe6QsNwAIf9CLUWrgEXZ3m6M5pvcAWA16lTwOhQnvCgvmfZEAAKsOndAEZhdcIwUo0cIz6ngOlcNeNSddO+Ari+qqe8jn8H4ALOKWa/ADCuuIesU9lV+gfc1PEJsfkyYHKs5xNi9Tlxz4Djq45PiOOHq/QLOFvq+e5RJfgWYK17yDp9BTCamPLJca8/wFTrHrK276jSG2BmxXcnTPoFnKGkZIHiyjzoETBGWeftThHcEHvcG6AiuSp2KXt8milzm7vCngCnyPxGL1+NR2BAfukDcLwCM0woQ4Un0DZJnAMGKHr8yKOgkZ5g8OkI8AQuvww+x8F1QHUDiO7dMCuPxNWRQ8BBDi6+o/IjIkOc7noHTJB7cAF32e0uxIpOI1eA6zO4NOf1jy3OaaYYGawTwBjFsDNXRsUSzmv6wwytyQEgcg8Z5+UXwzJyD4CXLbjskcwvlpYwoZseGWc9rQAz6B7kEpfQ5O+OAMco/E9oSFpawiqljwwz7xaAKG7NJVurfirZJlpfR4BwBzh67BUI8z19nLkEnKLWQU7RIwZLYFeZohDUHnCA3IMjBlyC2NAaLvq41wwQtg44+YNLEHLfQ1+kNgKEnTV2j3oPkPxo5gAQxVKpmVHTHCzE3fSgPqrYA0bIsrd0xpkkLJzqpCgcNQOEyR+bvlnKx8kidqcGgBm6IXx4wPywpFXy/gY6kBoAwgYB10aK6IHEUeUH+lSqwoCAsLMmTWVRdAwNlnWwAITH6pGzZbt8XoScdaMEjDMgHaBBbTRAzQOoEa0NutZI9eRHATiGS6QDI0ENohrdyFXg4bStFK8qQHj08pG7sK15nxou9HNUn/xUAFHyJwL9EJ3YVQI0ZF/mKQFGyD62dIMMEhMoToESFFXKD0k/AVN01LP9pgapHVZOp12K3Gzz6SofgMlVuyxYPhlqRX4AXeU6QIDIMIYH7RALsS0fkK8FasATGs+uZdXLQOLHOihFlOIpA8Idl84vzZNNU2305ynb1Btwimx2RGadtHIPWTmtGboKeeULEGZOO4qhmXXPFGtJrhKjQ+udoxWAsLBgY9Dm9nbiqKJpC4jaydk9jJ9smopPBlhNLV6A0D2OdCNqc/WG4gMZPvd7uIrA2Q+3SmFcaiWOnnX5nYBdCU7+TB78NxG/V4M3aSrQ/WUb2bvBe4hzF2TjoQD+y1/tJHognXTbMBdKAz3T5kdOzI+1pZAxVta5R6FycjZfN+5hMddMKI7yEa1q3WH0QFpSJRtV494uFtUWDLtH49zeThyuyq6SR4+DOvncJg5ClqVvc4U05WdMWyZFqJOb+DfacJhoOBCnTGspAZs/XPUZi9lRuM/TNre3E1cCUl71zASKbObddNrQSuC7G450ozSfCrfiIUwB+Oq08HOZQb94D3GpVGzXq5vzSlifxa5UNH8V8BlV3iU01SRpJlfM3wX8c8koUwH9wS8DSvKAHtADekAP6AE94L8POAqBrIoGd4DDQH2Ne1pu80TKA3pAD+gBPaAH9IAe0AN6QA/oAT2gB/SAHtADekAP6AHNAG1eV+0GcKP8FSz7f3hxBmj902rmW9gJYPm3kfSA8K1+J4A7cIPr/issDkxfLMOAhhfYBvj3AP+nH0h0Iw/YVh6wrTxgW3nAtvoLAuNXkRGu3LMAAAAASUVORK5CYII=" width="50px" alt=""></a>
 
-    <h1 style="color: white;"><a style="color: white;"> Ativadades passadas e respostas!!!</h1>
-    <button id = "botao">
-    <a href="Respectivamente2.pdf" target="_blank" > <h1> Geografia Ativadades 1 ao 18 </h1>
-    </a>
-    </button>
-    <br>
-    <button id="abaixa">
-        <a  href="Respectivamente2.pdf" download="Respectivamente2.pdf" type="application/pdf">download</a>
-    </button>
-    <br>
+    <!-- Título do Projeto -->
+    <h1 style="color: rgb(182, 45, 35);">PROJETOS DA FORMATURA</h1>
+
+    <!-- Botão para exibir o arquivo "arquivo.dwg local de formatura" -->
     <button>
-        <a href="trabalhoportuguês.pdf" target="_blank"><h1>respostas português 1 ao 8</h1></a>
+        <a href="Respectivamente2.pdf" target="_blank">
+            <h1>arquivo.dwg local de formatura</h1>
+        </a>
     </button>
-    <br>
+
+    <!-- Botão para download do arquivo "arquivo.dwg local de formatura" -->
     <button id="abaixa">
-        <a  href="trabalhoportuguês.pdf" download="trabalhoportuguês.pdf" type="application/pdf">download</a>
+        <a href="Respectivamente2.pdf" download="Respectivamente2.pdf" type="application/pdf">Download</a>
     </button>
-    <br>
+
+    <!-- Botão para exibir o arquivo "arquivo.dwg Arrecadação" -->
+    <button>
+        <a href="trabalhoportuguês.pdf" target="_blank">
+            <h1>arquivo.dwg Arrecadação</h1>
+        </a>
+    </button>
+
+    <!-- Botão para download do arquivo "arquivo.dwg Arrecadação" -->
+    <button id="abaixa">
+        <a href="trabalhoportuguês.pdf" download="trabalhoportuguês.pdf" type="application/pdf">Download</a>
+    </button>
+
+    <!-- Outro botão repetido para exibir o arquivo "arquivo.dwg Arrecadação" -->
+    <button>
+        <a href="trabalhoportuguês.pdf" target="_blank">
+            <h1>arquivo.dwg Arrecadação</h1>
+        </a>
+    </button>
+
+    <!-- Outro botão repetido para download do arquivo "arquivo.dwg Arrecadação" -->
+    <button id="abaixa">
+        <a href="trabalhoportuguês.pdf" download="trabalhoportuguês.pdf" type="application/pdf">Download</a>
+    </button>
+   
 </body>
 </html>
+
